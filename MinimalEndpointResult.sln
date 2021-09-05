@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalEndpointResult.AspNe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalEndpointResult.Tests", "tests\MinimalEndpointResult.Tests\MinimalEndpointResult.Tests.csproj", "{9872EF9C-00D6-4BB3-91F8-DF629C602D7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "sample\Sample\Sample.csproj", "{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{9872EF9C-00D6-4BB3-91F8-DF629C602D7F}.Release|x64.Build.0 = Release|Any CPU
 		{9872EF9C-00D6-4BB3-91F8-DF629C602D7F}.Release|x86.ActiveCfg = Release|Any CPU
 		{9872EF9C-00D6-4BB3-91F8-DF629C602D7F}.Release|x86.Build.0 = Release|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Debug|x64.Build.0 = Debug|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Debug|x86.Build.0 = Debug|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Release|x64.ActiveCfg = Release|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Release|x64.Build.0 = Release|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Release|x86.ActiveCfg = Release|Any CPU
+		{CF9C17D1-5C2D-4700-BC90-2966A5AFDE47}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
