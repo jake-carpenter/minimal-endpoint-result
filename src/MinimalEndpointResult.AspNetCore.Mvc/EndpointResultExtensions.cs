@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace EndpointResult.AspNetCore.Mvc
+namespace MinimalEndpointResult.AspNetCore.Mvc
 {
     public static class EndpointResultExtensions
     {

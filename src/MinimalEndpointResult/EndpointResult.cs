@@ -1,4 +1,4 @@
-﻿namespace EndpointResult
+﻿namespace MinimalEndpointResult
 {
     public static class EndpointResult
     {

@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace EndpointResult.Tests
+namespace MinimalEndpointResult.Tests
 {
     public class EndpointResultFailTests
     {
@@ -10,13 +10,13 @@ namespace EndpointResult.Tests
         [Fact]
         public void WithoutValue_ReturnsIEndpointResult()
         {
-            EndpointResult.Fail(ArbitraryStatusCode).Should().BeAssignableTo<IEndpointResult<None>>();
+            MinimalEndpointResult.EndpointResult.Fail(ArbitraryStatusCode).Should().BeAssignableTo<IEndpointResult<None>>();
         }
 
         [Fact]
         public void WithValue_ReturnsIEndpointResult()
         {
-            EndpointResult.Fail(ArbitraryStatusCode, new Dummy()).Should().BeAssignableTo<IEndpointResult<Dummy>>();
+            MinimalEndpointResult.EndpointResult.Fail(ArbitraryStatusCode, new Dummy()).Should().BeAssignableTo<IEndpointResult<Dummy>>();
         }
 
         [Theory]
@@ -25,7 +25,7 @@ namespace EndpointResult.Tests
         [InlineData(404)]
         public void WithoutValue_ReturnsResultWithStatusCode(int statusCode)
         {
-            EndpointResult.Fail(statusCode).StatusCode.Should().Be(statusCode);
+            MinimalEndpointResult.EndpointResult.Fail(statusCode).StatusCode.Should().Be(statusCode);
         }
 
         [Theory]
@@ -34,20 +34,20 @@ namespace EndpointResult.Tests
         [InlineData(404)]
         public void WithValue_ReturnsResultWithStatusCode(int statusCode)
         {
-            EndpointResult.Fail(statusCode, new Dummy()).StatusCode.Should().Be(statusCode);
+            MinimalEndpointResult.EndpointResult.Fail(statusCode, new Dummy()).StatusCode.Should().Be(statusCode);
         }
 
         [Fact]
         public void WithoutValue_ReturnsResultWithValueOfNone()
         {
-            EndpointResult.Fail(ArbitraryStatusCode).Value.Should().Be(None.Value);
+            MinimalEndpointResult.EndpointResult.Fail(ArbitraryStatusCode).Value.Should().Be(None.Value);
         }
 
         [Fact]
         public void WithValue_ReturnsResultWithValueOfProvidedType()
         {
             var dummy = new Dummy();
-            EndpointResult.Fail(ArbitraryStatusCode, dummy).Value.Should().Be(dummy);
+            MinimalEndpointResult.EndpointResult.Fail(ArbitraryStatusCode, dummy).Value.Should().Be(dummy);
         }
     }
 }

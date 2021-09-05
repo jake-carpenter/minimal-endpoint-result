@@ -6,7 +6,7 @@
 
     <ItemGroup>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-            <_Parameter1>EndpointResult.Tests</_Parameter1>
+            <_Parameter1>MinimalEndpointResult.Tests</_Parameter1>
         </AssemblyAttribute>
     </ItemGroup>
 

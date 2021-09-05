@@ -1,6 +1,6 @@
 using System;
 
-namespace EndpointResult
+namespace MinimalEndpointResult
 {
     public struct None : IEquatable<None>, IComparable<None>, IComparable
     {

@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace EndpointResult.Tests
+namespace MinimalEndpointResult.Tests
 {
     public class EndpointResultTests
     {

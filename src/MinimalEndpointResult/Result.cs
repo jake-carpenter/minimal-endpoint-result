@@ -1,4 +1,4 @@
-﻿namespace EndpointResult
+﻿namespace MinimalEndpointResult
 {
     internal class Result<T> : IEndpointResult<T>
     {

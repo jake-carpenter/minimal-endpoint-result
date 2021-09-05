@@ -1,4 +1,4 @@
-﻿namespace EndpointResult
+﻿namespace MinimalEndpointResult
 {
     public interface IEndpointResult<out T>
     {

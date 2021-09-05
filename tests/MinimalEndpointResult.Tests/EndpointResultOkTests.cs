@@ -1,26 +1,26 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace EndpointResult.Tests
+namespace MinimalEndpointResult.Tests
 {
     public class EndpointResultOkTests
     {
         [Fact]
         public void ReturnsIEndpointResult()
         {
-            EndpointResult.Ok().Should().BeAssignableTo<IEndpointResult<None>>();
+            MinimalEndpointResult.EndpointResult.Ok().Should().BeAssignableTo<IEndpointResult<None>>();
         }
 
         [Fact]
         public void ReturnsResultWith200StatusCode()
         {
-            EndpointResult.Ok().StatusCode.Should().Be(200);
+            MinimalEndpointResult.EndpointResult.Ok().StatusCode.Should().Be(200);
         }
 
         [Fact]
         public void ReturnsResultWithValueOfNone()
         {
-            EndpointResult.Ok().Value.Should().Be(None.Value);
+            MinimalEndpointResult.EndpointResult.Ok().Value.Should().Be(None.Value);
         }
     }
 }

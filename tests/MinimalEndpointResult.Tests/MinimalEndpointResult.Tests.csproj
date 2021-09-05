@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\EndpointResult\EndpointResult.csproj" />
+    <ProjectReference Include="..\..\src\MinimalEndpointResult\MinimalEndpointResult.csproj" />
   </ItemGroup>
 
 </Project>
