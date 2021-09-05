@@ -1,13 +1,13 @@
 ﻿namespace MinimalEndpointResult
 {
-    internal class Result<T> : IEndpointResult<T>
+    internal class ResultWithValue<T> : IEndpointResult<T>
     {
-        public Result(int statusCode)
+        public ResultWithValue(int statusCode)
         {
             StatusCode = statusCode;
         }
 
-        public Result(int statusCode, T value)
+        public ResultWithValue(int statusCode, T value)
         {
             StatusCode = statusCode;
             Value = value;

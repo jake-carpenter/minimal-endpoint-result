@@ -4,28 +4,28 @@
     {
         public static IEndpointResult<T> Return<T>(int statusCode, T value)
         {
-            return new Result<T>(statusCode, value);
+            return new ResultWithValue<T>(statusCode, value);
         }
 
         public static IEndpointResult<T> Return<T>(T value)
         {
             const int okStatusAsDefault = 200;
-            return new Result<T>(okStatusAsDefault, value);
+            return new ResultWithValue<T>(okStatusAsDefault, value);
         }
 
-        public static IEndpointResult<None> Ok()
+        public static IEndpointResult Ok()
         {
-            return new Result<None>(200);
+            return new ResultWithoutValue(200);
         }
 
-        public static IEndpointResult<None> Fail(int statusCode)
+        public static IEndpointResult Fail(int statusCode)
         {
-            return new Result<None>(statusCode);
+            return new ResultWithoutValue(statusCode);
         }
 
         public static IEndpointResult<T> Fail<T>(int statusCode, T value)
         {
-            return new Result<T>(statusCode, value);
+            return new ResultWithValue<T>(statusCode, value);
         }
     }
 }

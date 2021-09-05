@@ -6,11 +6,12 @@ namespace MinimalEndpointResult.AspNetCore.Mvc
     {
         public static IActionResult ToActionResult<T>(this IEndpointResult<T> endpointResult)
         {
-            return endpointResult switch
-            {
-                IEndpointResult<None> => new StatusCodeResult(endpointResult.StatusCode),
-                _ => new ObjectResult(endpointResult.Value) { StatusCode = endpointResult.StatusCode }
-            };
+            return new ObjectResult(endpointResult.Value) { StatusCode = endpointResult.StatusCode };
+        }
+
+        public static IActionResult ToActionResult(this IEndpointResult endpointResult)
+        {
+            return new StatusCodeResult(endpointResult.StatusCode);
         }
     }
 }

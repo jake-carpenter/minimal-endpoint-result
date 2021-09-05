@@ -3,12 +3,18 @@ using Xunit;
 
 namespace MinimalEndpointResult.Tests
 {
-    public class EndpointResultTests
+    public class ResultWithValueTests
     {
+        [Fact]
+        public void ImplementsIEndpointResultWithType()
+        {
+            new ResultWithValue<Dummy>(default, default).Should().BeAssignableTo<IEndpointResult<Dummy>>();
+        }
+
         [Fact]
         public void ImplementsIEndpointResult()
         {
-            new Result<Dummy>(default, default).Should().BeAssignableTo<IEndpointResult<Dummy>>();
+            new ResultWithValue<Dummy>(default, default).Should().BeAssignableTo<IEndpointResult>();
         }
 
         [Theory]
@@ -17,7 +23,7 @@ namespace MinimalEndpointResult.Tests
         [InlineData(401)]
         public void AcceptsStatusCode(int statusCode)
         {
-            new Result<Dummy>(statusCode).StatusCode.Should().Be(statusCode);
+            new ResultWithValue<Dummy>(statusCode).StatusCode.Should().Be(statusCode);
         }
 
         [Fact]
@@ -26,7 +32,7 @@ namespace MinimalEndpointResult.Tests
             const int statusCode = 200;
             var dummy = new Dummy();
 
-            var sut = new Result<Dummy>(statusCode, dummy);
+            var sut = new ResultWithValue<Dummy>(statusCode, dummy);
 
             sut.StatusCode.Should().Be(statusCode);
             sut.Value.Should().Be(dummy);
@@ -38,7 +44,7 @@ namespace MinimalEndpointResult.Tests
             const int statusCode = 200;
             const int value = 99;
 
-            var sut = new Result<int>(statusCode, value);
+            var sut = new ResultWithValue<int>(statusCode, value);
 
             sut.StatusCode.Should().Be(statusCode);
             sut.Value.Should().Be(value);

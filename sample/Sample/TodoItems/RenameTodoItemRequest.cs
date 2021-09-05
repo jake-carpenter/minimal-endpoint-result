@@ -12,7 +12,7 @@ namespace Sample.TodoItems
 
         public record Handler(DataStore DataStore)
         {
-            public IEndpointResult<None> Handle(RenameTodoItemRequest request)
+            public IEndpointResult Handle(RenameTodoItemRequest request)
             {
                 if (!DataStore.TodoItems.TryGetValue(request.Id, out var todoItem))
                     return EndpointResult.Fail(404);
