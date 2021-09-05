@@ -7,6 +7,12 @@
             return new Result<T>(statusCode, value);
         }
 
+        public static IEndpointResult<T> Return<T>(T value)
+        {
+            const int okStatusAsDefault = 200;
+            return new Result<T>(okStatusAsDefault, value);
+        }
+
         public static IEndpointResult<None> Ok()
         {
             return new Result<None>(200);

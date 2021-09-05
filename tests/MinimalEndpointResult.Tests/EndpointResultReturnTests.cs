@@ -23,6 +23,12 @@ namespace MinimalEndpointResult.Tests
         }
 
         [Fact]
+        public void Returns200StatusByDefault()
+        {
+            EndpointResult.Return<Dummy>(new Dummy()).StatusCode.Should().Be(200);
+        }
+
+        [Fact]
         public void ReturnsResultWithReferenceTypeValue()
         {
             var dummy = new Dummy();
