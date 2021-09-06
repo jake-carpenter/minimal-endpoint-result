@@ -2,6 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <PackageVersion />
+        <Title>MinimalEndpointResult</Title>
+        <Authors>Jake Carpenter</Authors>
+        <Description>Result type for commands that can be easily translated into HTTP result responses.</Description>
+        <PackageProjectUrl>https://github.com/jake-carpenter/minimal-endpoint-result/</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/jake-carpenter/minimal-endpoint-result/blob/main/LICENSE</PackageLicenseUrl>
     </PropertyGroup>
 
     <ItemGroup>
