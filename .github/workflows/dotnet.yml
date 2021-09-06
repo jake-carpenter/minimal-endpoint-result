@@ -30,4 +30,3 @@ jobs:
       with:
         PROJECT_FILE_PATH: src/MinimalEndpointResult/MinimalEndpointResult.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_FILE_PATH: src/MinimalEndpointResult/VERSION
