@@ -19,8 +19,10 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore -c Release
+    - name: Build library
+      run: dotnet build --no-restore -c Release --project src/MinimalEndpointResult/MinimalEndpointResult.csproj
+    - name: Build tests
+      run: dotnet build --no-restore -c Release --project tests/MinimalEndpointResult.Tests/MinimalEndpointResult.Tests.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal -c Release
     - name: Publish Nuget
