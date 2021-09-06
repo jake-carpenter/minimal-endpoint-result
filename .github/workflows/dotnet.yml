@@ -1,0 +1,33 @@
+name: Publish MinimalEndpointResult
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build library
+      run: dotnet build --no-restore -c Release src/MinimalEndpointResult/MinimalEndpointResult.csproj
+    - name: Build tests
+      run: dotnet build --no-restore -c Release tests/MinimalEndpointResult.Tests/MinimalEndpointResult.Tests.csproj
+    - name: Test
+      run: dotnet test --no-build --verbosity normal -c Release tests/MinimalEndpointResult.Tests/MinimalEndpointResult.Tests.csproj
+    - name: Publish Nuget
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+        PROJECT_FILE_PATH: src/MinimalEndpointResult/MinimalEndpointResult.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        VERSION_FILE_PATH: src/MinimalEndpointResult/VERSION
