@@ -20,11 +20,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build library
-      run: dotnet build --no-restore -c Release --project src/MinimalEndpointResult/MinimalEndpointResult.csproj
+      run: dotnet build --no-restore -c Release src/MinimalEndpointResult/MinimalEndpointResult.csproj
     - name: Build tests
-      run: dotnet build --no-restore -c Release --project tests/MinimalEndpointResult.Tests/MinimalEndpointResult.Tests.csproj
+      run: dotnet build --no-restore -c Release tests/MinimalEndpointResult.Tests/MinimalEndpointResult.Tests.csproj
     - name: Test
-      run: dotnet test --no-build --verbosity normal -c Release
+      run: dotnet test --no-build --verbosity normal -c Release tests/MinimalEndpointResult.Tests/MinimalEndpointResult.Tests.csproj
     - name: Publish Nuget
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
