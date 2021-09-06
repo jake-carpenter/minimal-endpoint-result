@@ -1,4 +1,4 @@
-name: Publish MinimalEndpointResults
+name: Publish MinimalEndpointResult
 
 on:
   push:
@@ -23,4 +23,9 @@ jobs:
       run: dotnet build --no-restore -c Release
     - name: Test
       run: dotnet test --no-build --verbosity normal -c Release
-    
+    - name: Publish Nuget
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+        PROJECT_FILE_PATH: src/MinimalEndpointResult/MinimalEndpointResult.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        VERSION_FILE_PATH: src/MinimalEndpointResult/VERSION
