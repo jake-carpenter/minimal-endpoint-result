@@ -19,15 +19,24 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build library
+    - name: Build main library
       run: dotnet build --no-restore -c Release src/MinimalEndpointResult/MinimalEndpointResult.csproj
     - name: Build tests
       run: dotnet build --no-restore -c Release tests/MinimalEndpointResult.Tests/MinimalEndpointResult.Tests.csproj
+    - name: Build MVC library
+      run: dotnet build --no-restore -c Release src/MinimalEndpointResult.AspNetCore.Mvc/MinimalEndpointResult.AspNetCore.Mvc.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal -c Release tests/MinimalEndpointResult.Tests/MinimalEndpointResult.Tests.csproj
-    - name: Publish Nuget
+    - name: Publish main library NuGet
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
         PROJECT_FILE_PATH: src/MinimalEndpointResult/MinimalEndpointResult.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         VERSION_FILE_PATH: src/MinimalEndpointResult/VERSION
+    - name: Publish MVC library NuGet
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+        PROJECT_FILE_PATH: src/MinimalEndpointResult.AspNetCore.Mvc/MinimalEndpointResult.AspNetCore.Mvc.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        VERSION_FILE_PATH: src/MinimalEndpointResult.AspNetCore.Mvc/VERSION
+    
